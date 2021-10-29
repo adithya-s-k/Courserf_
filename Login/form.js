@@ -9,47 +9,44 @@
     appId: "1:973882672057:web:9a7cdc6bb40f4feaee2c68",
     measurementId: "G-C9PB4MLS0E"
   };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
+//   // Initialize Firebase
+//   firebase.initializeApp(firebaseConfig);
+//   firebase.analytics();
 
-  const auth =  firebase.auth();
-
-  //signup function
-  function signUp(){
-    var email = document.getElementById("email");
-    var password = document.getElementById("password");
-
-    const promise = auth.createUserWithEmailAndPassword(email.value,password.value);
-    //
-    promise.catch(e=>alert(e.message));
-    alert("SignUp Successfully");
-  }
-
-  //signIN function
-  function  signIn(){
-    var email = document.getElementById("email");
-    var password  = document.getElementById("password");
-    const promise = auth.signInWithEmailAndPassword(email.value,password.value);
-    promise.catch(e=>alert(e.message));
-    location.replace("http://localhost/Courserf/")
+// // let's code 
+// var datab  = firebase.database().ref('data');
+// function UserRegister(){
+// var email = document.getElementById('eemail').value;
+// var password = document.getElementById('lpassword').value;
+// firebase.auth().createUserWithEmailAndPassword(email,password).then(function(){
     
-  }
-
-
-  //signOut
-
-  function signOut(){
-    auth.signOut();
-    alert("SignOut Successfully from System");
-  }
-
-  //active user to homepage
-  firebase.auth().onAuthStateChanged((user)=>{
-    if(user){
-      var email = user.email;
-      alert("Active user "+email);
-
-    }else{
-      alert("No Active user Found")
-    }
-  })
+// }).catch(function (error){
+//     var errorcode = error.code;
+//     var errormsg = error.message;
+// });
+// }
+// const auth = firebase.auth();
+// function SignIn(){
+//     // var email = document.getElementById('eemail').value;
+//     // var password = document.getElementById('lpassword').value;
+//     // const promise = auth.signInWithEmailAndPassword(email,password);
+//     // promise.catch( e => alert(e.msg));
+//     // window.open("https://www.google.com","_self");
+//     location.replace("http://localhost/Courserf/")
+// }
+// document.getElementById('form').addEventListener('submit', (e) => {
+//     e.preventDefault();
+//     var userInfo = datab.push();
+//     userInfo.set({
+//         name: getId('fname'),
+//         email : getId('eemail'),
+//         password : getId('lpassword')
+//     });
+//     alert("Successfully Signed Up");
+//     console.log("sent");
+//     document.getElementById('form').reset();
+    
+// });
+// function  getId(id){
+//     return document.getElementById(id).value;
+// }
